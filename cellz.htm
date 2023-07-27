@@ -1,0 +1,179 @@
+<html>
+
+<head><script type="text/javascript" src="/_static/js/bundle-playback.js?v=1WaXNDFE" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.ict.swin.edu.au/personal/jbrownlee/cellz/cellz.htm","20060821063443","https://web.archive.org/","web","/_static/",
+	      "1156142083");
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Jason Brownlee - Personal Webpage</title>
+<style>
+<!--
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="640" id="AutoNumber1">
+    <tr>
+      <td>
+          
+          <h2>
+	<font color="#000080">
+		<b><font size="6">Jason Brownlee</font></b>
+		<br/>
+		<i><font size="4">Personal Webpage</font></i>
+    	<font size="1">[<a href="/web/20060821063443/http://ict.swin.edu.au/personal/jbrownlee/index.htm">home</a>]</font>
+    </font>
+</h2>
+    <p>
+&nbsp;</p>
+    <hr color="#000000" size="1">
+ 
+<h3><font size="5" color="#000080">Cellz</font></h3>
+<p> 
+
+<font size="4" color="#000080"><b>Competition</b></font></p>
+ 
+      <p>Cellz was a programming competition for the
+      <a href="https://web.archive.org/web/20060821063443/http://gal4.ge.uiuc.edu:8080/GECCO-2004/index.html">GECCO 2004</a> 
+      evolutionary computation conference. Basically the goal of the competition 
+      was to design a controller capable of getting the most points over 
+      averaged over 10 trials of 1000 time steps. The game starts with a number 
+      of food particles, and the controller must move to collect (by touching) 
+      the food particles. Once enough energy is collected by a cell it divides 
+      into two cells which then continue the process of collecting food and 
+      dividing. Each cell has the same underlying controller or state machine, 
+      and thus some some kind of competitive or cooperative strategy must be 
+      devised. 
+      <p>The controller is nothing more than a static directed graph structure 
+      using a few basic functions (<i>min</i>, <i>max</i>, <i>rand</i>, <i>const</i>, 
+      <i>sum</i>, <i>prod</i>, <i>tanh</i>). At 
+      each time step, the controller is provided with 19 inputs including an 
+      eight-dimensional directional vector for food and other cells (eight 
+      points of the compass), current x and y velocity in the two-dimensional 
+      environment and current mass (size given the amount of energy/food 
+      consumed thus far). The maximum nodes permitted in the graph is 250, thus 
+      the complexity of the controllers is low enough to have then developed by 
+      hand and or by some search strategy. 
+      <p>A <a href="https://web.archive.org/web/20060821063443/http://cswww.essex.ac.uk/staff/sml/gecco/CellzForGecco.html">
+      competition page</a> was provided with a useful introduction and an 
+      example <a href="https://web.archive.org/web/20060821063443/http://algoval.essex.ac.uk:8080/cellz/CellzApplet.html">
+      applet</a> demonstrating a simple cellz controller. Detailed
+      <a href="https://web.archive.org/web/20060821063443/http://algoval.essex.ac.uk:8080/cellz/GettingStarted.html">instructions</a> were provided for developers, as were
+      <a href="https://web.archive.org/web/20060821063443/http://cswww.essex.ac.uk/staff/lucas/demo/cellz/Cellz.html">
+      general rules</a> for the game environment. Controllers could be submitted 
+      online (<a href="https://web.archive.org/web/20060821063443/http://algoval.essex.ac.uk:8080/cellz/SubmitController.html">and 
+      still can be</a>), and a
+      <a href="https://web.archive.org/web/20060821063443/http://algoval.essex.ac.uk:8080/cellz/League.jsp">leader board</a> 
+      was provided for bragging rights. The competition ended before the 
+      conference, and the final results are available
+      <a href="https://web.archive.org/web/20060821063443/http://www-illigal.ge.uiuc.edu:8080/GECCO-2004/competitions.html">
+      here</a>,
+      <a href="https://web.archive.org/web/20060821063443/http://cswww.essex.ac.uk/staff/sml/gecco/results/cellz/CellzResults.html">
+      here</a> and
+      <a href="https://web.archive.org/web/20060821063443/http://cswww.essex.ac.uk/staff/sml/gecco/results/GeccoCompetitionsSummary.html">
+      here</a> (I devised the winning controller). 
+<p> 
+
+<font size="4" color="#000080"><b>Cellz with Neural Networks &amp; Genetic 
+Algorithms</b></font></p>
+ 
+      <p>The first few solutions involved various multilayer feed-forward 
+      artificial neural networks. The structures were fixed (designed by hand), 
+      and the weights were trained with a genetic algorithm (I used
+      <a href="https://web.archive.org/web/20060821063443/http://cs.gmu.edu/~eclab/projects/ecj/">ECJ</a> for this 
+      purpose). The network structures were provided with the food and cell 
+      sensor vectors as input and output a directional vector which was then 
+      scaled by a constant value to become velocities. Results for these initial 
+      structures were poor.<p>After the poor results obtained with simple 
+structures, more complex multilayer network structures were designed and trained 
+both with back propagation and genetic algorithms. These structures consisted of 
+hierarchical feed-forward networks that would calculate an x velocity which was 
+then fed into a second network to calculate the y velocity. Results for these 
+solutions were also poor.<p>In the software package provided was an example 
+greedy controller written in Java called GreedyControl. This controller worked 
+by selecting the closest particle and outputting a velocity vector that caused 
+the cell to head towards that particle. The strategy produced results superior 
+to any of the structures I could come up with, so I decided to see if I could 
+model what the greedy solution was doing using the limited directed graph 
+representation required for the competition (the greedy controller was an 
+example provided to test the API and was written in Java, it was not confined to 
+the directed graph representation required for submission). 
+ 
+      <p>The problem of modelling the greedy controller could be broken down 
+      into two parts; 1) selecting the closest particle, 2) setting a direction 
+      and magnitude for the output velocity vector. 
+ 
+      <p>The first part of the problem was deceptively difficult. In code, it 
+      can be addressed using a simple search routine, though in the limited 
+      repertoire of mathematic functions, it required all kinds of 
+      transformations and scaling which ultimately ended up using nearly 130 of 
+      the 250 nodes allowed for the directed graph structure. 
+ 
+      <p>The second part of the problem was much simpler. After analysing the 
+      decisions made by a running greedy controller, it was determined that it 
+      made only a very limited number of decisions (output velocity vectors). 
+      Given the result of the selected direction solved in the first part of the 
+      problem, the second part of the problem was solved using two parallel 
+      network structures which took as input the selection made in the first sub 
+      problem. The weights were trained using a genetic algorithm, and the 
+      directions output matched identically those made by the hard coded greedy 
+      controller. <p> 
+
+<font size="4" color="#000080"><b>Download</b></font></p>
+ 
+      <p>The submitted solution can be downloaded from the competition results 
+      website. I have provided the solution here in an excel spreadsheet in 
+      which it was developed. The spreadsheet allowed the specific graph 
+      structure to be hand coded most efficiently and permitted easy debugging. 
+      The weights evolved by the genetic algorithm were simply pasted into the 
+      appropriate constant nodes in the graph structure. Although the solution 
+      is nothing fancy, the thing I am most proud of is all the messy 
+      transformations required to get the selection sub-problem solved - the 
+      only reason I'm proud is because of the time I required to sit there with 
+      pen and paper to get it right.<p>The spreadsheet is available here:
+<a href="New_Func_v1_directed_graph.xls">New_Func_v1_directed_graph.xls</a>. <p>&nbsp;</td>
+      </tr>
+    </table>
+  </center>
+  </div>
+
+</body>
+
+</html><!--
+     FILE ARCHIVED ON 06:34:43 Aug 21, 2006 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 22:54:35 Jul 14, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 143.554
+  exclusion.robots: 0.244
+  exclusion.robots.policy: 0.225
+  cdx.remote: 0.082
+  esindex: 0.012
+  LoadShardBlock: 110.789 (3)
+  PetaboxLoader3.datanode: 74.434 (4)
+  PetaboxLoader3.resolve: 122.641 (2)
+  load_resource: 104.869
+-->
